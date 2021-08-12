@@ -28,7 +28,7 @@ frida -U -F -l Frida-libcurlUnpinning.js
 ![](README/images/cli.jpg)
 ![](README/images/after.jpg)
 
-# Contributions
+# Credits
 - [iOS libcurl hooking](https://www.nevermoe.com/2016/05/30/hook-ios%E7%9A%84libcurl/) by @Nevermoe
 
 # Q & A
