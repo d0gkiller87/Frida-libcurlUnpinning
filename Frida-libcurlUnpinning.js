@@ -27,7 +27,7 @@ function hook_curl_easy_setopt( curl_easy_setopt_ptr, proxy_str = null ) {
     Memory.writeUtf8String( proxy_str_ptr, proxy_str );
   }
   
-  Interceptor.attach( func, {
+  Interceptor.attach( curl_easy_setopt_ptr, {
     onEnter: function ( args ) {
       if ( proxy_str_ptr ) {
         curl_easy_setopt_function_str( args[0], CURLOPT_PROXY, proxy_str_ptr );
