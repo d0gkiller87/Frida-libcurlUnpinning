@@ -1,6 +1,6 @@
 /*
   Enums can be found in:
-  https://github.com/curl/curl/blob/master/packages/OS400/curl.inc.in
+  https://github.com/curl/curl/blob/master/projects/OS400/curl.inc.in
 */
 
 const CURLOPT_CUSTOMREQUEST = 10036;
