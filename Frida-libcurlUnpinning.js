@@ -53,11 +53,12 @@ function hook_curl_easy_setopt( curl_easy_setopt_ptr, proxy_str = null ) {
       curl_easy_setopt_function_long( args[0], CURLOPT_SSL_VERIFYHOST, 0 );
       curl_easy_setopt_function_long( args[0], CURLOPT_PINNEDPUBLICKEY, 0 );
 
-      if (
-        opt == CURLOPT_SSL_VERIFYPEER ||
-        opt == CURLOPT_SSL_VERIFYHOST ||
-        opt == CURLOPT_PINNEDPUBLICKEY
-      ) {
+      if ([
+        CURLOPT_SSL_VERIFYPEER,
+        CURLOPT_SSL_VERIFYHOST,
+        CURLOPT_PINNEDPUBLICKEY,
+        CURLOPT_PROXY,
+      ].includes( opt )) {
         args[2] = NUL;
         console.log( `[+] Bypassed libcurl SSL Pinning ( opt = ${ opt } )` );
       }
