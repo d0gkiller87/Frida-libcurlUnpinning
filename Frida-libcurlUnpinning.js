@@ -24,7 +24,7 @@ function hook_curl_easy_setopt( curl_easy_setopt_ptr, proxy_str = null ) {
   let proxy_str_ptr = null;
   if ( proxy_str ) {
     const proxy_str_ptr = Memory.alloc( proxy_str.length + 1 );
-    Memory.writeUtf8String( proxy_str_ptr, proxy_str );
+    proxy_str_ptr.writeUtf8String( proxy_str );
   }
   
   Interceptor.attach( curl_easy_setopt_ptr, {
