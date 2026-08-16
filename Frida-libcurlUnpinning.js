@@ -23,7 +23,7 @@ function hook_curl_easy_setopt( curl_easy_setopt_ptr, proxy_str = null ) {
   
   let proxy_str_ptr = null;
   if ( proxy_str ) {
-    const proxy_str_ptr = Memory.alloc( proxy_str.length + 1 );
+    proxy_str_ptr = Memory.alloc( proxy_str.length + 1 );
     proxy_str_ptr.writeUtf8String( proxy_str );
   }
   
@@ -76,7 +76,7 @@ function find_curl_easy_setopt_and_hook() {
       is_curl_located = true;
       console.log( `[+] Located curl_easy_setopt in ${ _module.name }` )
       hook_curl_easy_setopt( curl_easy_setopt_ptr );
-      // hook_curl_easy_setopt( curl_easy_setopt_ptr, "http://127.0.0.1:8080" ); // example of specifying a proxy
+      // hook_curl_easy_setopt( curl_easy_setopt_ptr, 'http://127.0.0.1:8080' ); // specifying a proxy
     }
   }
 
